@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Detalhes do <%= @pet.name %></h1>
+  <p>Encontrado ha <%= (Date.today - @pet.found_on).to_i %> dias</p>
+  <p>O(A) <%= @pet.name %> da spécie <%= @pet.species %> foi encontrado em <%= @pet.address %> no dia <%= @pet.found_on %></p>
+  <%= link_to "Editar Pet", edit_pet_path, class: "btn btn-primary" %>
+  <%= link_to "Deletar", pet_path(@pet), class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Tem certeza disso?"} %>
+</div>
